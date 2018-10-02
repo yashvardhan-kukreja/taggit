@@ -1,0 +1,24 @@
+{
+  "name": "spectrogram",
+  "version": "1.0.0",
+  "description": "A live-input spectrogram written using [Polymer][polymer] using the [Web Audio API][wapi].",
+  "main": "g-spectrogram-controls.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borismus/spectrogram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/borismus/spectrogram/issues"
+  },
+  "homepage": "https://github.com/borismus/spectrogram#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemailer": "^4.6.8",
+    "nodemailer-sendgrid-transport": "^0.2.0"
+  }
+}
