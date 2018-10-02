@@ -4,13 +4,8 @@ var nodemailer = require("nodemailer");
 var path = require("path");
 var port = process.env.PORT || 7040;
 
+
 app.get('/', (req, res) => {
-	
-	res.sendFile(path.join(__dirname + '/index.html'));
-
-});
-
-app.get('/sendmail', (req, res) => {
 	
 var smtp = nodemailer.createTransport({
                     service: 'gmail',
