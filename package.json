@@ -4,6 +4,7 @@
   "description": "A live-input spectrogram written using [Polymer][polymer] using the [Web Audio API][wapi].",
   "main": "g-spectrogram-controls.js",
   "scripts": {
+	"start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
