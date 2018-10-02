@@ -5,7 +5,7 @@ var path = require("path");
 var port = process.env.PORT || 3294;
 
 
-app.get('/', (req, res) => {
+app.get('/:email', (req, res) => {
 	
 var smtp = nodemailer.createTransport({
                     service: 'gmail',
@@ -15,7 +15,7 @@ var smtp = nodemailer.createTransport({
                     }
                 });
                 var mailOptions = {
-                    to: "goelashwin36@gmail.com",
+                    to: req.params.email,
                     from: 'tagg.it.18@gmail.com',
                     subject: 'TaggIt Notification!!!',
                     html: '<h1>Kapde chori hone vaale hai!!!!</h1>'
