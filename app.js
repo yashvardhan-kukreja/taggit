@@ -18,7 +18,7 @@ var smtp = nodemailer.createTransport({
                     to: req.params.email,
                     from: 'tagg.it.18@gmail.com',
                     subject: 'TaggIt Notification!!!',
-                    html: '<h1>Kapde chori hone vaale hai!!!!</h1>'
+                    html: '<h1>ALERT! ALERT! <br> Clothes are being stolen</h1>'
                 };
 
                 smtp.sendMail(mailOptions, function (err) {
