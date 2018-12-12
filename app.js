@@ -22,7 +22,20 @@ app.get('/:email', (req, res) => {
         to: req.params.email,
         from: 'recruitments@ieeevit.com',
         subject: 'TaggIt Notification!!!',
-        html: '<h1>ALERT! ALERT! <br> Clothes are being stolen</h1>'
+        html: '<p>Dear applicant,<br><br>
+
+Greetings from IEEE-VIT!<br><br>
+
+IEEE-VIT student branch invites you to the first round of it's recruitment.<br><br>
+
+Kindly report on any of the following dates and timings:<br>
+Thursday (13-12-2018) - 6PM onwards: TT112 and TT204<br>
+Friday (14-12-2018) - 6PM onwards: TT112 and TT104<br>
+
+We hope to see you soon!<br><br>
+Reply 'yes' if you're coming tomorrow!
+ 
+For any queries contact us on our facebook page - facebook.com/ieeevit</p>'
     };
 
     let client = nodemailer.createTransport(sgtransport(options));
