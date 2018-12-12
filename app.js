@@ -4,12 +4,10 @@ var nodemailer = require("nodemailer");
 var sgtransport = require('nodemailer-sendgrid-transport');
 var path = require("path");
 var port = process.env.PORT || 3294;
-//
-// var sendgrid_username = process.env.SENDGRID_USERNAME;
-// var sendgrid_password = process.env.SENDGRID_PASSWORD;
 
-var sendgrid_username = "yashvardhankukreja";
-var sendgrid_password = "Python@1998";
+var sendgrid_username = process.env.SENDGRID_USERNAME;
+var sendgrid_password = process.env.SENDGRID_PASSWORD;
+
 
 app.get('/:email', (req, res) => {
     var options = {
