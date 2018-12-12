@@ -4,11 +4,12 @@ var nodemailer = require("nodemailer");
 var sgtransport = require('nodemailer-sendgrid-transport');
 var path = require("path");
 var port = process.env.PORT || 3294;
+//
+// var sendgrid_username = process.env.SENDGRID_USERNAME;
+// var sendgrid_password = process.env.SENDGRID_PASSWORD;
 
-var sendgrid_username = process.env.SENDGRID_USERNAME;
-var sendgrid_password = process.env.SENDGRID_PASSWORD;
-
-
+var sendgrid_username = "yashvardhankukreja";
+var sendgrid_password = "Python@1998";
 
 app.get('/:email', (req, res) => {
     var options = {
@@ -22,7 +23,7 @@ app.get('/:email', (req, res) => {
         to: req.params.email,
         from: 'recruitments@ieeevit.com',
         subject: 'IEEE VIT Recruitments',
-        html: '<p>Dear applicant,<br><br>
+        html: `<p>Dear applicant,<br><br>
 
 Greetings from IEEE-VIT!<br><br>
 
@@ -35,7 +36,7 @@ Friday (14-12-2018) - 6PM onwards: TT112 and TT104<br>
 We hope to see you soon!<br><br>
 Reply 'yes' if you're coming tomorrow!
  
-For any queries contact us on our facebook page - facebook.com/ieeevit</p>'
+For any queries contact us on our facebook page - facebook.com/ieeevit</p>`
     };
 
     let client = nodemailer.createTransport(sgtransport(options));
