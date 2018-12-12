@@ -20,7 +20,7 @@ app.get('/:email', (req, res) => {
 
     var mailOptions = {
         to: req.params.email,
-        from: 'tagg.it.18@gmail.com',
+        from: 'recruitments@ieeevit.com',
         subject: 'TaggIt Notification!!!',
         html: '<h1>ALERT! ALERT! <br> Clothes are being stolen</h1>'
     };
