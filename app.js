@@ -21,7 +21,7 @@ app.get('/:email', (req, res) => {
     var mailOptions = {
         to: req.params.email,
         from: 'recruitments@ieeevit.com',
-        subject: 'TaggIt Notification!!!',
+        subject: 'IEEE VIT Recruitments',
         html: '<p>Dear applicant,<br><br>
 
 Greetings from IEEE-VIT!<br><br>
