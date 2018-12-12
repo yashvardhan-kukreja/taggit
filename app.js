@@ -10,7 +10,9 @@ var sendgrid_password = process.env.SENDGRID_PASSWORD;
 
 
 
-app.get('/:email', (req, res) => {
+app.post('/', (req, res) => {
+
+
     var options = {
         auth: {
             api_user: sendgrid_username,
@@ -19,7 +21,7 @@ app.get('/:email', (req, res) => {
     };
 
     var mailOptions = {
-        to: req.params.email,
+        to: req.body.email,
         from: 'tagg.it.18@gmail.com',
         subject: 'TaggIt Notification!!!',
         html: '<h1>ALERT! ALERT! <br> Clothes are being stolen</h1>'
