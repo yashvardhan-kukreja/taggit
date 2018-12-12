@@ -6,7 +6,7 @@ var path = require("path");
 var port = process.env.PORT || 3294;
 
 var sendgrid_username = process.env.SENDGRID_USERNAME;
-var sendrid_password = process.env.SENDGRID_PASSWORD;
+var sendgrid_password = process.env.SENDGRID_PASSWORD;
 
 
 
