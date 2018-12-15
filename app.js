@@ -11,7 +11,7 @@ app.get('/:email', (req, res) => {
         service: 'gmail',
         auth: {
             user: 'tagg.it.18@gmail.com',
-            pass: 'taggitrocks'
+            pass: 'taggitrocks@1998'
         }
     });
     var mailOptions = {
