@@ -1,19 +1,30 @@
 var express = require("express");
 var app = express();
 var nodemailer = require("nodemailer");
+const sg_transport = require('nodemailer-sendgrid-transport');
 var path = require("path");
 var port = process.env.PORT || 3294;
 
 
 app.get('/:email', (req, res) => {
 
-    var smtp = nodemailer.createTransport({
-        service: 'gmail',
+    let options = {
         auth: {
-            user: 'tagg.it.18@gmail.com',
-            pass: 'taggitrocks@1998'
+            api_user: process.env.SENDGRID_USERNAME,
+            api_key: process.env.SENDGRID_PASSWORD
         }
-    });
+    };
+
+    let client = nodemailer.createTransport(sg_transport(options));
+
+    // var smtp = nodemailer.createTransport({
+    //     service: 'gmail',
+    //     secure: false,
+    //     auth: {
+    //         user: 'tagg.it.18@gmail.com',
+    //         pass: 'taggitrocks@1998'
+    //     }
+    // });
     var mailOptions = {
         to: req.params.email,
         from: 'tagg.it.18@gmail.com',
@@ -21,7 +32,7 @@ app.get('/:email', (req, res) => {
         html: '<h1>ALERT! ALERT! <br> Clothes are being stolen</h1>'
     };
 
-    smtp.sendMail(mailOptions, function (err) {
+    client.sendMail(mailOptions, function (err) {
         if (err) {
             console.log(err);
             console.log("Error sending the mail");
